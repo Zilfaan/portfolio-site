@@ -1,11 +1,12 @@
 "use client";
 
 import { educationData } from "@/lib/educationData";
+import { use } from "react";
 
 // Get education details
-interface Props {
-  params: { slug: string };
-}
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
 // Decide grade color
 const getGradeColor = (grade: string) => {
@@ -38,7 +39,8 @@ const getGradeColor = (grade: string) => {
 };
 
 export default function EducationDetail({ params }: Props) {
-  const education = educationData.find((e) => e.slug === params.slug);
+  const { slug } = use(params);
+  const education = educationData.find((e) => e.slug === slug);
 
   if (!education) {
     return (
