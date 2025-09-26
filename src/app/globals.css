@@ -9,6 +9,8 @@
   --accent-purple: #8c00ff;
   --font-sans: "Nunito", Arial, sans-serif;
   --font-mono: "Fira Code", monospace;
+
+  scroll-behavior: smooth;
 }
 
 body {
@@ -17,6 +19,7 @@ body {
   font-family: var(--font-sans);
   margin: 0;
   line-height: 1.6;
+  overflow-x: hidden;
 
   /* subtle glow pulse */
   animation: glowPulse 12s ease-in-out infinite;
@@ -89,4 +92,49 @@ a:hover {
 }
 .animate-blink {
   animation: blink 1s step-start infinite;
+}
+/* SCROLLBAR STYLING */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--accent-cyan),
+    var(--accent-magenta)
+  );
+  border-radius: 6px;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--accent-magenta),
+    var(--accent-cyan)
+  );
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-cyan) rgba(0, 0, 0, 0.1);
+}
+
+/* Subtle glow effect on scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  box-shadow: 0 0 10px rgba(0, 255, 245, 0.5);
+  transition: all 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 15px rgba(255, 0, 143, 0.7);
 }
