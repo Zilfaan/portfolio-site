@@ -93,6 +93,14 @@ a:hover {
 .animate-blink {
   animation: blink 1s step-start infinite;
 }
+
+.special-text {
+  background: linear-gradient(45deg, var(--accent-cyan), var(--accent-magenta));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* SCROLLBAR STYLING */
 
 /* Chrome, Edge, Safari */

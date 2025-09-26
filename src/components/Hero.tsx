@@ -16,7 +16,7 @@ export default function Hero() {
       {/* Avatar */}
       <div className="relative z-10 opacity-80">
         <Image
-          src=""
+          src="/avatar.png"
           alt="Zilfaan"
           width={200}
           height={200}
@@ -26,10 +26,7 @@ export default function Hero() {
       </div>
 
       {/* Name */}
-      <h1
-        className="relative z-10 text-5xl sm:text-6xl font-extrabold mt-6 mb-4 drop-shadow-lg"
-        style={{ color: "var(--accent-cyan)" }}
-      >
+      <h1 className="relative z-10 text-5xl sm:text-6xl font-extrabold mt-6 mb-4 drop-shadow-lg special-text">
         Zilfaan Zaki Sulfikhan
       </h1>
       {/* Tagline */}
