@@ -51,15 +51,11 @@ export default function EducationDetail({ params }: Props) {
   return (
     <div className="px-4 min-h-[90vh] py-20 flex flex-col justify-center max-w-4xl mx-auto space-y-8 ">
       <h1 className="text-3xl md:text-4xl font-mono font-bold mb-8 special-text">
-        ~/education/{education.slug}
+        {education.place}
       </h1>
 
       {/* Education Info Card */}
       <div className="border border-[var(--accent-cyan)]/30 rounded-xl p-6 space-y-4">
-        <h2 className="text-2xl font-bold text-[var(--accent-cyan)]">
-          {education.place}
-        </h2>
-
         {/* Stacked view for mobile and a normal grid view for desktop */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="flex flex-col md:block">
@@ -82,6 +78,7 @@ export default function EducationDetail({ params }: Props) {
           </div>
         </div>
       </div>
+      <p>{education.description}</p>
       {/* Subjects */}
       {education.subjects.length > 0 && (
         <div>
