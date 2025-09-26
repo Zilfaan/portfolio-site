@@ -93,7 +93,8 @@ export default function EducationDetail({ params }: Props) {
                 key={idx}
                 className="px-3 py-1 text-sm rounded-full border border-[var(--accent-cyan)]/30 opacity-90 flex justify-between sm:justify-start gap-2"
               >
-                <span>{subject.name}</span> -
+                <span>{subject.name}</span>{" "}
+                <span className="hidden sm:flex">-</span>
                 <span
                   className={`${getGradeColor(subject.grade)} font-semibold`}
                 >
