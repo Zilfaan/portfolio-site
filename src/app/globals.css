@@ -146,3 +146,15 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   box-shadow: 0 0 15px rgba(255, 0, 143, 0.7);
 }
+
+/* Text selection colors */
+::selection {
+  background: var(--accent-magenta);
+  color: var(--background);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: var(--accent-magenta);
+  color: var(--background);
+}
