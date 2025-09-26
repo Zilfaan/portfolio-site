@@ -1,18 +1,18 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const pathname = usePathname();
   const pageMap: Record<string, string> = {
-    "/": "Home",
-    "/projects": "Projects",
-    "/about": "About",
-    "/contact": "Contact",
+    "#home": "Home",
+    "#projects": "Projects",
+    "#education": "Education",
+    "#contact": "Contact",
   };
-  const targetPage = pageMap[pathname] || "";
+
+  // Which section is active
+  const [activeSection, setActiveSection] = useState("#home");
+  const targetPage = pageMap[activeSection] || "";
 
   // Typing effect
   const [displayedPage, setDisplayedPage] = useState(targetPage);
@@ -25,7 +25,7 @@ export default function Navbar() {
   // Only show navbar background on scroll
   const [scrolled, setScrolled] = useState(false);
 
-  // Scroll detection
+  // Scroll detection for navbar blur
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
     handleScroll();
@@ -33,9 +33,35 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Typing effect logic
+  // Section detection
+  useEffect(() => {
+    const sections = Object.keys(pageMap).map((id) =>
+      document.querySelector(id)
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible.length > 0) {
+          const id = `#${visible[0].target.id}`;
+          setActiveSection(id);
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    sections.forEach((sec) => sec && observer.observe(sec));
+    return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Trigger typing when section changes
   useEffect(() => {
     if (targetPage !== displayedPage) setPhase("deleting");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [targetPage]);
 
   useEffect(() => {
@@ -54,7 +80,7 @@ export default function Navbar() {
         setPhase("typing");
       }
     } else if (phase === "typing") {
-      if (displayedPage.length < targetPage.length) {
+      if (displayedPage != targetPage) {
         timeout = setTimeout(
           () => setDisplayedPage(targetPage.slice(0, displayedPage.length + 1)),
           stepDelay
@@ -67,7 +93,7 @@ export default function Navbar() {
     return () => clearTimeout(timeout);
   }, [displayedPage, phase, targetPage]);
 
-  // Lock scroll when sidebar open for mobile view
+  // Lock scroll when sidebar open
   useEffect(() => {
     document.body.style.overflow = sidebarVisible ? "hidden" : "";
   }, [sidebarVisible]);
@@ -77,7 +103,6 @@ export default function Navbar() {
     setSidebarVisible(true);
     setTimeout(() => setHamburgerOpen(true), 10);
   };
-
   const closeSidebar = () => {
     setHamburgerOpen(false);
     setTimeout(() => setSidebarVisible(false), 300);
@@ -110,23 +135,23 @@ export default function Navbar() {
         {/* Desktop links */}
         <div className="hidden sm:flex">
           <div className="flex flex-wrap justify-center sm:justify-end gap-3 sm:gap-5 mt-2 sm:mt-0 w-full sm:w-auto">
-            {Object.entries(pageMap).map(([path, label]) => (
-              <Link
-                key={path}
-                href={path}
+            {Object.entries(pageMap).map(([hash, label]) => (
+              <a
+                key={hash}
+                href={hash}
                 className={`font-mono transition ${
-                  pathname === path
+                  activeSection === hash
                     ? "text-[var(--accent-cyan)]"
                     : "hover:text-[var(--accent-magenta)]"
                 }`}
               >
                 {label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
 
-        {/* Hamburger button for mobile view*/}
+        {/* Hamburger button */}
         <div className="sm:hidden">
           <button onClick={openSidebar} className="text-xl font-bold">
             ☰
@@ -156,19 +181,19 @@ export default function Navbar() {
             >
               ✕
             </button>
-            {Object.entries(pageMap).map(([path, label]) => (
-              <Link
-                key={path}
-                href={path}
+            {Object.entries(pageMap).map(([hash, label]) => (
+              <a
+                key={hash}
+                href={hash}
                 onClick={closeSidebar}
                 className={`font-mono text-lg transition ${
-                  pathname === path
+                  activeSection === hash
                     ? "text-[var(--accent-cyan)]"
                     : "hover:text-[var(--accent-magenta)]"
                 }`}
               >
                 {label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
