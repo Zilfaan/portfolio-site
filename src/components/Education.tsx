@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function Education() {
   return (
-    <div className="px-6 py-12 flex flex-col items-center mb-14">
-      <h1 className="text-4xl md:text-5xl font-bold mb-16 text-[var(--accent-cyan)]">
+    <div className="px-6 py-0 md:py-12 flex flex-col items-center mb-14">
+      <h1 className="text-4xl md:text-5xl font-bold md:mb-16 text-[var(--accent-cyan)]">
         ~/education
       </h1>
 
