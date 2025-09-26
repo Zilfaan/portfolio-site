@@ -10,6 +10,11 @@
   --font-sans: "Nunito", Arial, sans-serif;
   --font-mono: "Fira Code", monospace;
 
+  --high-grade: hsl(120, 100%, 50%);
+  --moderately-high-grade: hsl(120, 100%, 40%);
+  --moderate-grade: hsl(120, 100%, 30%);
+  --average-grade: hsl(120, 100%, 20%);
+
   scroll-behavior: smooth;
 }
 
@@ -33,6 +38,11 @@ body {
     --accent-cyan: #00b8d9;
     --accent-magenta: #d9006f;
     --accent-purple: #7a3fff;
+
+    --high-grade: hsl(120, 100%, 20%);
+    --moderately-high-grade: hsl(120, 100%, 30%);
+    --moderate-grade: hsl(120, 100%, 40%);
+    --average-grade: hsl(120, 100%, 50%);
   }
   body {
     background-color: var(--background);
