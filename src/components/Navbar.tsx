@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -10,9 +11,11 @@ export default function Navbar() {
     "#contact": "Contact",
   };
 
+  const pathname = usePathname();
+
   // Which section is active
   const [activeSection, setActiveSection] = useState("#home");
-  const targetPage = pageMap[activeSection] || "";
+  const targetPage = pageMap[activeSection] || activeSection;
 
   // Typing effect
   const [displayedPage, setDisplayedPage] = useState(targetPage);
@@ -57,6 +60,14 @@ export default function Navbar() {
     return () => observer.disconnect();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    console.log(pathname);
+    if (pathname !== "/") {
+      setActiveSection("~" + pathname);
+      console.log("set");
+    }
+  }, [pathname]);
 
   // Trigger typing when section changes
   useEffect(() => {
