@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -15,7 +16,10 @@ export default function Navbar() {
 
   // Which section is active
   const [activeSection, setActiveSection] = useState("#home");
-  const targetPage = pageMap[activeSection] || activeSection;
+
+  // Get the target page for display
+  const targetPage =
+    pathname === "/" ? pageMap[activeSection] || activeSection : pathname;
 
   // Typing effect
   const [displayedPage, setDisplayedPage] = useState(targetPage);
@@ -38,6 +42,7 @@ export default function Navbar() {
 
   // Section detection
   useEffect(() => {
+    if (pathname != "/") return;
     const sections = Object.keys(pageMap).map((id) =>
       document.querySelector(id)
     );
@@ -59,13 +64,12 @@ export default function Navbar() {
     sections.forEach((sec) => sec && observer.observe(sec));
     return () => observer.disconnect();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [pathname]);
 
+  // User is not on home page, set active section to pathname
   useEffect(() => {
-    console.log(pathname);
     if (pathname !== "/") {
-      setActiveSection("~" + pathname);
-      console.log("set");
+      setActiveSection(pathname);
     }
   }, [pathname]);
 
@@ -119,6 +123,9 @@ export default function Navbar() {
     setTimeout(() => setSidebarVisible(false), 300);
   };
 
+  // Small helper to fix hrefs based on pathname
+  const getHref = (hash: string) => (pathname === "/" ? hash : `/${hash}`);
+
   return (
     <>
       {/* Navbar */}
@@ -147,9 +154,9 @@ export default function Navbar() {
         <div className="hidden sm:flex">
           <div className="flex flex-wrap justify-center sm:justify-end gap-3 sm:gap-5 mt-2 sm:mt-0 w-full sm:w-auto">
             {Object.entries(pageMap).map(([hash, label]) => (
-              <a
+              <Link
                 key={hash}
-                href={hash}
+                href={getHref(hash)}
                 className={`font-mono transition ${
                   activeSection === hash
                     ? "text-[var(--accent-cyan)]"
@@ -157,7 +164,7 @@ export default function Navbar() {
                 }`}
               >
                 {label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -193,9 +200,9 @@ export default function Navbar() {
               ✕
             </button>
             {Object.entries(pageMap).map(([hash, label]) => (
-              <a
+              <Link
                 key={hash}
-                href={hash}
+                href={getHref(hash)}
                 onClick={closeSidebar}
                 className={`font-mono text-lg transition ${
                   activeSection === hash
@@ -204,7 +211,7 @@ export default function Navbar() {
                 }`}
               >
                 {label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
