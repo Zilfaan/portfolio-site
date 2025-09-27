@@ -1,17 +1,4 @@
-type Subject = {
-  name: string;
-  grade: string;
-};
-
-type Education = {
-  slug: string;
-  place: string;
-  period: string;
-  qualification: string;
-  result: string;
-  subjects: Subject[];
-  description: string;
-};
+import { Education } from "@/types/Education";
 
 export const educationData: Education[] = [
   {
