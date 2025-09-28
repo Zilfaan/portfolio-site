@@ -20,7 +20,7 @@ export default function Hero() {
           alt="Zilfaan"
           width={200}
           height={200}
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full rounded-full border"
           priority
         />
       </div>
@@ -34,11 +34,11 @@ export default function Hero() {
         className="relative z-10 max-w-xl text-lg sm:text-xl mb-8 drop-shadow-md"
         style={{ color: "var(--foreground)" }}
       >
-        Full-stack developer crafting web, mobile apps with an interest towards
-        Game Development.
+        Sri Lankan CS undergrad (Year 2) building games, web and mobile
+        applications.
       </p>
 
-      {/* Move to projects Button TODO: */}
+      {/* Move to projects Button */}
       <a
         href="#projects"
         className="relative z-10 inline-block px-8 py-3 font-mono rounded-lg shadow-lg 
