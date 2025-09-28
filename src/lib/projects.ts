@@ -31,7 +31,11 @@ export const projects: Project[] = [
       "A top-down action game for Brackeys Game Jam 2025.2, built around the theme 'Risk it for the biscuit'.",
     lengthyDescription:
       "A top-down action game for Brackeys Game Jam 2025.2, built around the theme 'Risk it for the biscuit' where you are bound to the core of your Safe Zone. Step outside, and the barrier begins to wither. The longer you wander, the faster safety drains. Dodge, and strike through swarms of enemies, upgrade your Safe Zone with powerful cores all with the goal of eventually Ascending after obtaining 2 light fragments.",
-    images: ["/projects/lightswager/lightswager.gif"],
+    images: [
+      "/projects/lightswager/lightswager.gif",
+      "/projects/lightswager/lightswager2.png",
+      "/projects/lightswager/lightswager3.png",
+    ],
     link: "https://spidergeneral.itch.io/lights-wager",
     github: "https://github.com/Zilfaan/TopDownZoneGame",
     techstack: ["unreal-engine", "c++"],
@@ -46,6 +50,7 @@ export const projects: Project[] = [
     images: [
       "/projects/spiderclient/spiderclient.gif",
       "/projects/spiderclient/spiderclient.png",
+      "/projects/spiderclient/spiderclient2.png",
     ],
     link: "",
     techstack: ["java", "opengl", "mcp"],
@@ -57,7 +62,11 @@ export const projects: Project[] = [
       "Fully reactive and accessible website focused on SDG Goal 14: Life Below Water.",
     lengthyDescription:
       "Oceon is a simple webbsite that educates users about ocean conservation and sustainable practices focused on SDG Goal 14: Life below water, developed for a coursework. Built with accessibility and responsiveness in mind, it provides interactive educational resources, and informs people on the threats faced by marine life. Built for a coursework.",
-    images: ["/projects/oceon/oceon.gif"],
+    images: [
+      "/projects/oceon/oceon.gif",
+      "/projects/oceon/oceon3.png",
+      "/projects/oceon/oceon2.png",
+    ],
     link: "",
     techstack: ["html", "css", "javascript"],
   },
