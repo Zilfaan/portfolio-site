@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
   const pageMap: Record<string, string> = {
     "#home": "Home",
-    "#projects": "Projects",
     "#education": "Education",
+    "#projects": "Projects",
     "#contact": "Contact",
   };
 
