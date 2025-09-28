@@ -121,7 +121,10 @@ export default function ProjectsPage() {
                   {projects[currentIndex].description}
                 </p>
                 <Link
-                  href={projects[currentIndex].link}
+                  href={
+                    projects[currentIndex].link ||
+                    `/projects/${projects[currentIndex].slug}`
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-transform duration-300 hover:scale-105"
@@ -158,7 +161,7 @@ export default function ProjectsPage() {
                           className="block w-full h-full"
                         >
                           <Image
-                            src={project.image}
+                            src={project.images[0]}
                             alt={project.name}
                             fill
                             className="object-cover"
@@ -173,7 +176,7 @@ export default function ProjectsPage() {
                       ) : (
                         <div onClick={() => goToProject(index)}>
                           <Image
-                            src={project.image}
+                            src={project.images[0]}
                             alt={project.name}
                             fill
                             className="object-cover"
@@ -236,7 +239,10 @@ export default function ProjectsPage() {
                   {projects[currentIndex].description}
                 </p>
                 <Link
-                  href={projects[currentIndex].link}
+                  href={
+                    projects[currentIndex].link ||
+                    `/projects/${projects[currentIndex].slug}`
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-mono font-semibold transition-transform duration-300 hover:scale-105"
@@ -296,7 +302,7 @@ export default function ProjectsPage() {
                           className="block w-full h-full"
                         >
                           <Image
-                            src={project.image}
+                            src={project.images[0]}
                             alt={project.name}
                             fill
                             className="object-cover transition-transform duration-300 hover:scale-105"
@@ -311,7 +317,7 @@ export default function ProjectsPage() {
                       ) : (
                         <div onClick={() => goToProject(index)}>
                           <Image
-                            src={project.image}
+                            src={project.images[0]}
                             alt={project.name}
                             fill
                             className="object-cover transition-transform duration-300 hover:scale-105"

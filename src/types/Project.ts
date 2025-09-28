@@ -2,8 +2,10 @@ export type Project = {
   slug: string;
   name: string;
   description: string;
-  image: string;
-  link: string;
+  lengthyDescription: string;
+  images: string[];
+  link?: string;
+  github?: string;
   techstack: string[];
 };
 

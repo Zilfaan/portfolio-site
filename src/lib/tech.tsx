@@ -8,6 +8,8 @@ import {
   SiFirebase,
   SiUnrealengine,
   SiOpengl,
+  SiNodedotjs,
+  SiExpress,
 } from "react-icons/si";
 
 // Mapping tech to icons
@@ -25,6 +27,8 @@ export const techIcons: Record<string, JSX.Element> = {
   mcp: <span className="text-pink-400 font-bold">MCP</span>,
   html: <FaHtml5 className="text-orange-500" />,
   css: <FaCss3Alt className="text-blue-400" />,
+  nodejs: <SiNodedotjs className="text-green-600" />,
+  express: <SiExpress className="text-gray-300 dark:text-white" />,
 };
 
 // Mapping tech to docs link
@@ -42,4 +46,6 @@ export const techLinks: Record<string, string> = {
   mcp: "https://minecraft.fandom.com/wiki/Tutorials/Programs_and_editors/Mod_Coder_Pack",
   html: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   css: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  nodejs: "https://nodejs.org/docs",
+  express: "https://expressjs.com/en/starter/installing.html",
 };
