@@ -129,11 +129,8 @@ export default function ProjectDetail({
           )}
         </div>
 
-        {/* Image Gallery */}
-        <div className="mt-3 mb-16">{renderImageGallery()}</div>
-
         {/* Tech Stack */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="font-mono font-bold text-2xl mb-8">Built With</h2>
           <div className="flex flex-wrap gap-4 justify-center max-w-4xl mx-auto">
             {project.techstack.map((tech, index) => (
@@ -141,6 +138,9 @@ export default function ProjectDetail({
             ))}
           </div>
         </div>
+
+        {/* Image Gallery */}
+        <div className="mt-3 mb-16">{renderImageGallery()}</div>
       </div>
     </div>
   );
