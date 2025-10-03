@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import ProjectsPage from "../components/Projects";
 import Education from "../components/Education";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
       </div>
       <div id="projects">
         <ProjectsPage />
+      </div>
+      <div id="contact">
+        <Contact />
       </div>
     </>
   );
