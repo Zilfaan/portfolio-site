@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="w-full py-6 px-10 flex flex-col sm:flex-row items-center justify-between bg-[var(--background)] text-[var(--foreground)]">
+    <footer className="w-full py-6 px-10 flex flex-col sm:flex-row items-center justify-between bg-[var(--background)]/50 text-[var(--foreground)]">
       <p className="text-sm font-mono mb-4 sm:mb-0">
         © {new Date().getFullYear()} Zilfaan Zaki Sulfikhan.
       </p>
