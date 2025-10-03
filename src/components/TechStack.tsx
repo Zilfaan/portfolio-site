@@ -68,7 +68,7 @@ export default function TechStackSection() {
   };
 
   return (
-    <section className="relative min-h-[60vh] flex flex-col items-center text-center">
+    <section className="relative mb-30 flex flex-col items-center text-center">
       {/* Background glow */}
       <div className="w-[75rem] h-[30rem] absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent-cyan)]/75 opacity-5 blur-3xl -z-10"></div>
 
