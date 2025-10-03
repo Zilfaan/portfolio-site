@@ -9,6 +9,7 @@ export default function Navbar() {
     "#home": "Home",
     "#education": "Education",
     "#projects": "Projects",
+    "#techstack": "Tech",
     "#contact": "Contact",
   };
 
