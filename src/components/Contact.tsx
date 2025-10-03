@@ -76,7 +76,7 @@ export default function ContactSection() {
         </h1>
         <p className="text-lg max-w-md">
           Interested in collaborating, hiring, or discussing a project? I&apos;m
-          always open to new opportunities and meaningful conversations.
+          always open to new opportunities and insightful discussions.
         </p>
 
         {/* Social buttons */}
