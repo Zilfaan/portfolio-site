@@ -96,7 +96,7 @@ export default function ContactSection() {
             <FaLinkedin className="text-xl" />
           </SocialButton>
           <SocialButton
-            href="mailto:zilfaanzaki@example.com"
+            href="mailto:zilfaanzaki@gmail.com"
             label="Email"
             bgColor="#da202a"
           >
