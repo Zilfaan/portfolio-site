@@ -10,11 +10,13 @@ import {
   SiOpengl,
   SiNodedotjs,
   SiExpress,
+  SiJavascript,
 } from "react-icons/si";
 
 // Mapping tech to icons
 export const techIcons: Record<string, JSX.Element> = {
   typescript: <SiTypescript className="text-sky-500" />,
+  javascript: <SiJavascript className="text-yellow-300" />,
   tailwindcss: <SiTailwindcss className="text-cyan-400" />,
   electron: <SiElectron className="text-blue-400" />,
   react: <FaReact className="text-blue-500" />,
@@ -34,6 +36,7 @@ export const techIcons: Record<string, JSX.Element> = {
 // Mapping tech to docs link
 export const techLinks: Record<string, string> = {
   typescript: "https://www.typescriptlang.org/docs/",
+  javascript: "https://www.w3schools.com/js/",
   tailwindcss: "https://tailwindcss.com/docs",
   electron: "https://www.electronjs.org/docs",
   react: "https://react.dev/",
