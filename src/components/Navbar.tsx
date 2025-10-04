@@ -131,7 +131,7 @@ export default function Navbar() {
     <>
       {/* Navbar */}
       <nav
-        className={`w-full fixed top-0 z-50 flex flex-wrap justify-between items-center py-3 px-6 sm:px-10 text-sm sm:text-base transition-colors duration-300 ${
+        className={`w-full fixed top-0 z-50 flex flex-nowrap justify-between items-center py-3 px-4 sm:px-10 text-sm sm:text-base overflow-x-hidden transition-colors duration-300 ${
           scrolled
             ? "backdrop-blur-md bg-[var(--background)]/40"
             : "bg-transparent"
