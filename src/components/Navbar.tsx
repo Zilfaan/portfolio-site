@@ -128,7 +128,7 @@ export default function Navbar() {
   const getHref = (hash: string) => (pathname === "/" ? hash : `/${hash}`);
 
   return (
-    <>
+    <div className="fixed top-0 w-full z-50">
       {/* Navbar */}
       <nav
         className={`absolute top-0 left-0 right-0 z-50 flex flex-wrap justify-between items-center py-3 px-4 sm:px-10 text-sm sm:text-base overflow-x-hidden transition-colors duration-300 ${
@@ -217,6 +217,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
