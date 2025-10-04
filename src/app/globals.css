@@ -16,6 +16,7 @@
   --average-grade: hsl(120, 100%, 20%);
 
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
