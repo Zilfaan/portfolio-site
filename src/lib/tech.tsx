@@ -39,9 +39,7 @@ export const techIcons: Record<string, JSX.Element> = {
   "react-native": <FaReact className="text-blue-500" />,
   vite: <SiVite className="text-purple-500" />,
   firebase: <SiFirebase className="text-yellow-500" />,
-  "unreal-engine": (
-    <SiUnrealengine className="text-gray-700 dark:text-gray-200" />
-  ),
+  "unreal-engine": <SiUnrealengine className="text-[var(--foreground)]" />,
   "c++": <span className="text-blue-600 font-bold">C++</span>,
   "c#": <span className="text-purple-500 font-bold">C#</span>,
   java: <FaJava className="text-red-500" />,
@@ -51,17 +49,17 @@ export const techIcons: Record<string, JSX.Element> = {
   html: <FaHtml5 className="text-orange-500" />,
   css: <FaCss3Alt className="text-blue-500" />,
   nodejs: <SiNodedotjs className="text-green-600" />,
-  express: <SiExpress className="text-gray-800 dark:text-white" />,
+  express: <SiExpress className="text-[var(--foreground)]" />,
   mysql: <SiMysql className="text-orange-500" />,
   mongodb: <SiMongodb className="text-green-600" />,
   sqlite: <SiSqlite className="text-blue-400" />,
-  nextjs: <SiNextdotjs className="text-black dark:text-white" />,
+  nextjs: <SiNextdotjs className="text-[var(--foreground)]" />,
   expo: <SiExpo className="text-purple-500" />,
   docker: <FaDocker className="text-blue-500" />,
   git: <FaGit className="text-orange-500" />,
   "github-actions": <SiGithubactions className="text-purple-400" />,
   blender: <SiBlender className="text-orange-500" />,
-  unity: <FaUnity className="text-gray-900 dark:text-white" />,
+  unity: <FaUnity className="text-[var(--foreground)]" />,
 };
 
 // Mapping tech to docs link
