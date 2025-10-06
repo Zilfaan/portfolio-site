@@ -1,8 +1,10 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { BiMoon, BiSun } from "react-icons/bi";
 
 export default function Navbar() {
   const pageMap: Record<string, string> = {
@@ -127,6 +129,8 @@ export default function Navbar() {
   // Small helper to fix hrefs based on pathname
   const getHref = (hash: string) => (pathname === "/" ? hash : `/${hash}`);
 
+  const { theme, setTheme } = useTheme();
+
   return (
     <div className="fixed top-0 w-full z-50">
       {/* Navbar */}
@@ -153,7 +157,7 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden sm:flex">
-          <div className="flex flex-wrap justify-center sm:justify-end gap-3 sm:gap-5 mt-2 sm:mt-0 w-full sm:w-auto">
+          <div className="mr-10 flex flex-wrap justify-center sm:justify-end gap-3 sm:gap-5 mt-2 sm:mt-0 w-full sm:w-auto">
             {Object.entries(pageMap).map(([hash, label]) => (
               <Link
                 key={hash}
@@ -168,6 +172,15 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
+          <button
+            className="cursor-pointer"
+            onClick={() => {
+              const next = theme === "light" ? "dark" : "light";
+              setTheme(next);
+            }}
+          >
+            {theme === "light" ? <BiSun size={20} /> : <BiMoon size={20} />}
+          </button>
         </div>
 
         {/* Hamburger button */}
@@ -214,6 +227,17 @@ export default function Navbar() {
                 {label}
               </Link>
             ))}
+            <div className="flex-1 flex items-end">
+              <button
+                className="cursor-pointer"
+                onClick={() => {
+                  const next = theme === "light" ? "dark" : "light";
+                  setTheme(next);
+                }}
+              >
+                {theme === "light" ? <BiSun size={28} /> : <BiMoon size={28} />}
+              </button>
+            </div>
           </div>
         </div>
       )}

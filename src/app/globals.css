@@ -1,22 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  /* Dark Mode colors */
+  --font-sans: "Nunito", Arial, sans-serif;
+  --font-mono: "Fira Code", monospace;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Dark Mode */
+html {
   --background: #0c0c1f;
   --foreground: #f0f0f5;
   --accent-cyan: #00fff5;
   --accent-magenta: #ff008f;
   --accent-purple: #8c00ff;
-  --font-sans: "Nunito", Arial, sans-serif;
-  --font-mono: "Fira Code", monospace;
 
   --high-grade: hsl(120, 100%, 50%);
   --moderately-high-grade: hsl(120, 100%, 40%);
   --moderate-grade: hsl(120, 100%, 30%);
   --average-grade: hsl(120, 100%, 20%);
 
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+  background-color: var(--background);
+}
+
+/* Light Mode */
+html[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --accent-cyan: #00b8d9;
+  --accent-magenta: #d9006f;
+  --accent-purple: #7a3fff;
+
+  --high-grade: hsl(120, 100%, 20%);
+  --moderately-high-grade: hsl(120, 100%, 30%);
+  --moderate-grade: hsl(120, 100%, 40%);
+  --average-grade: hsl(120, 100%, 50%);
+
+  background-color: var(--background);
 }
 
 body {
@@ -31,23 +51,14 @@ body {
   animation: glowPulse 12s ease-in-out infinite;
 }
 
-/* Light Mode colors */
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --foreground: #1a1a1a;
-    --accent-cyan: #00b8d9;
-    --accent-magenta: #d9006f;
-    --accent-purple: #7a3fff;
-
-    --high-grade: hsl(120, 100%, 20%);
-    --moderately-high-grade: hsl(120, 100%, 30%);
-    --moderate-grade: hsl(120, 100%, 40%);
-    --average-grade: hsl(120, 100%, 50%);
-  }
-  body {
+/* subtle glow pulse background animation */
+@keyframes glowPulse {
+  0%,
+  100% {
     background-color: var(--background);
-    animation: glowPulseLight 12s ease-in-out infinite;
+  }
+  50% {
+    background-color: color-mix(in srgb, var(--background) 85%, white 15%);
   }
 }
 
@@ -67,27 +78,6 @@ a {
 a:hover {
   color: var(--accent-magenta);
   text-decoration: underline;
-}
-
-/* subtle glow pulse background animation */
-@keyframes glowPulse {
-  0%,
-  100% {
-    background-color: #0c0c1f;
-  }
-  50% {
-    background-color: #12122a;
-  }
-}
-
-@keyframes glowPulseLight {
-  0%,
-  100% {
-    background-color: #ffffff;
-  }
-  50% {
-    background-color: #f5f5ff;
-  }
 }
 
 /* Blinking cursor */
