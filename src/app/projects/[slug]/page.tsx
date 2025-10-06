@@ -24,7 +24,7 @@ export default function ProjectDetail({
       {images.map((src, index) => (
         <div
           key={index}
-          className="relative rounded-2xl overflow-hidden shadow-xl"
+          className="relative rounded-2xl overflow-hidden"
           style={{ height: IMAGE_HEIGHT }}
         >
           <Image
@@ -60,7 +60,7 @@ export default function ProjectDetail({
               return (
                 <div
                   key={globalIndex}
-                  className={`relative rounded-2xl overflow-hidden shadow-xl ${
+                  className={`relative rounded-2xl overflow-hidden ${
                     isWideImage ? "w-full max-w-5xl mx-auto" : "flex-1 max-w-lg"
                   }`}
                   style={{ height: IMAGE_HEIGHT }}
