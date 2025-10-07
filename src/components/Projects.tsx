@@ -84,6 +84,34 @@ export default function ProjectsPage() {
     };
   };
 
+  // Scrolling carousel with mobile gestures
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const threshold = 50;
+
+    if (distance > threshold) {
+      nextProject();
+    } else if (distance < -threshold) {
+      prevProject();
+    }
+
+    // reset
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
     <div className="pt-10 pb-20 flex items-center justify-center px-4 md:px-6 relative min-h-screen">
       {/* Randomised dots in background */}
@@ -146,7 +174,12 @@ export default function ProjectsPage() {
             </div>
 
             {/* Mobile Carousel */}
-            <div className="relative h-64 overflow-hidden rounded-xl mx-4">
+            <div
+              className="relative h-64 overflow-hidden rounded-xl mx-4"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               <div className="relative w-full h-full flex items-center justify-center">
                 {projects.map((project, index) => {
                   return (
