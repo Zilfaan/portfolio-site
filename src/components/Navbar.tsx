@@ -147,9 +147,16 @@ export default function Navbar() {
             className="font-mono whitespace-nowrap"
             style={{ color: "var(--accent-cyan)" }}
           >
-            <span className="text-[var(--accent-magenta)] text-sm sm:text-base">
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "var(--accent-magenta",
+              }}
+              href={"/"}
+              className="text-sm sm:text-base"
+            >
               zilfaan@portfolio:~$
-            </span>{" "}
+            </Link>{" "}
             {displayedPage}
             <span className="inline-block w-[1px] h-5 bg-[var(--accent-cyan)] ml-1 animate-blink"></span>
           </span>
