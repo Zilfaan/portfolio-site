@@ -7,6 +7,11 @@ Modern portfolio website showcasing my work and experience. Built with Next.js 1
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8?style=flat-square&logo=tailwindcss)
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 
+<p align="center">
+  <img src="./docs/prev.png" alt="Preview Dark" width="48%">
+  <img src="./docs/prev_light.png" alt="Preview Light" width="48%">
+</p>
+
 ## Features
 
 - Single-page layout with smooth section navigation
