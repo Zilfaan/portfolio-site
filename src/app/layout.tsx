@@ -7,8 +7,34 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "next-themes";
 
 export const metadata = {
-  title: "Zilfaan Zaki | Portfolio",
-  description: "Developer Portfolio of Zilfaan Zaki Sulfikhan",
+  title: "Zilfaan Zaki Sulfikhan | Portfolio",
+  description:
+    "Developer Portfolio of Zilfaan Zaki Sulfikhan, showcasing projects, skills, and experience.",
+  applicationName: "Zilfaan Portfolio",
+  keywords: [
+    "Zilfaan Zaki Sulfikhan",
+    "Zilfaan",
+    "Zaki",
+    "Sulfikhan",
+    "Portfolio",
+    "Developer",
+    "Game",
+    "Computer Science",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  authors: [{ name: "Zilfaan Zaki Sulfikhan" }],
+  creator: "Zilfaan Zaki Sulfikhan",
+  openGraph: {
+    title: "Zilfaan Zaki Sulfikhan | Portfolio",
+    description:
+      "Developer Portfolio of Zilfaan Zaki Sulfikhan, showcasing projects, skills, and experience.",
+    url: "https://zilfaan-portfolio.vercel.app",
+    siteName: "Zilfaan Portfolio",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
