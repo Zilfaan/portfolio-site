@@ -10,6 +10,9 @@ export const metadata = {
   title: "Zilfaan Zaki Sulfikhan | Portfolio",
   description:
     "Developer Portfolio of Zilfaan Zaki Sulfikhan, showcasing projects, skills, and experience.",
+  verification: {
+    google: "tUVw69zBaATq0Yt5PYRsPB5DENUcGrkEBJb_Utwi40Y",
+  },
   applicationName: "Zilfaan Portfolio",
   keywords: [
     "Zilfaan Zaki Sulfikhan",
