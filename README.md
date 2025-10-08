@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio Site
 
-## Getting Started
+Modern portfolio website showcasing my work and experience. Built with Next.js 15, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-15.5.4-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8?style=flat-square&logo=tailwindcss)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+
+## Features
+
+- Single-page layout with smooth section navigation
+- Responsive design that works on all devices
+- Dark/light theme toggle
+- Working contact form with email notifications
+- Dynamic project and education pages
+
+## Tech Stack
+
+<table>
+  <tr>
+    <td><strong>Frontend</strong></td>
+    <td>
+      <img src="https://img.shields.io/badge/-Next.js-black?style=flat-square&logo=next.js" />
+      <img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black" />
+      <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Styling</strong></td>
+    <td>
+      <img src="https://img.shields.io/badge/-Tailwind-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white" />
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Backend</strong></td>
+    <td>
+      <img src="https://img.shields.io/badge/-Nodemailer-0F9DCE?style=flat-square" />
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Analytics</strong></td>
+    <td>
+      <img src="https://img.shields.io/badge/-Vercel%20Analytics-black?style=flat-square&logo=vercel" />
+    </td>
+  </tr>
+</table>
+
+## Setup
+
+Clone and install dependencies:
+
+```bash
+git clone https://github.com/Zilfaan/portfolio-site.git
+npm install
+```
+
+Create `.env.local` in the root directory:
+
+```env
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_password
+END_EMAIL=where_to_receive@email.com
+```
+
+Start the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build & Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Local Production Build
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push to GitHub
+2. Import repo on [Vercel](https://vercel.com)
+3. Add environment variables:
+   - `EMAIL_USER`
+   - `EMAIL_PASS`
+   - `END_EMAIL`
+4. Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Works on other platforms too: Netlify, Railway, DigitalOcean, etc.
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run dev      # Development server
+npm run build    # Production build
+npm start        # Start production server
+npm run lint     # Lint code
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact Form
+
+The contact form uses Nodemailer to send emails through the Gmail's SMTP server.
+
+1. Enable 2FA on your Google account
+2. Generate an App Password
+3. Use the app password in `EMAIL_PASS`
+
+Test the form locally before deploying to catch any configuration issues.
+
+## License
+
+[MIT](./LICENSE)
