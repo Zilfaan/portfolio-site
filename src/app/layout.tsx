@@ -34,7 +34,7 @@ export const metadata = {
     title: "Zilfaan Zaki Sulfikhan | Portfolio",
     description:
       "Developer Portfolio of Zilfaan Zaki Sulfikhan, showcasing projects, skills, and experience.",
-    url: "https://zilfaan-portfolio.vercel.app",
+    url: "https://zilfaan.space",
     siteName: "Zilfaan Portfolio",
     type: "website",
   },
