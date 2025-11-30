@@ -91,6 +91,30 @@ export default function ProjectDetail({
   return (
     <div className="min-h-[91vh] flex flex-col justify-center pt-20 bg-gradient-to-br from-background via-background to-accent/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Breadcrumb structured data for search engines */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://zilfaan.space/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: project.name,
+                  item: "https://zilfaan.space/projects/" + project.slug,
+                },
+              ],
+            }),
+          }}
+        />
         {/* Header */}
         <header className="text-center mb-5">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-mono font-bold special-text mb-6">
