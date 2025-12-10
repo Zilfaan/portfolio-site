@@ -5,6 +5,60 @@ import { projects } from "@/lib/projects";
 import TechBlock from "@/components/TechBlock";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const project = projects.find((p) => p.slug === params.slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found | Zilfaan",
+      description: "This project does not exist.",
+      openGraph: {
+        title: "Project Not Found | Zilfaan",
+        description: "This project does not exist.",
+        url: `https://zilfaan.space/projects/${params.slug}`,
+      },
+    };
+  }
+
+  const mainImage = project.images[0];
+
+  return {
+    title: `Projects | ${project.name}`,
+    description: project.lengthyDescription,
+
+    openGraph: {
+      title: `Projects | ${project.name}`,
+      description: project.lengthyDescription,
+      url: `https://zilfaan.space/projects/${project.slug}`,
+      ...(mainImage
+        ? {
+            images: [
+              {
+                url: mainImage,
+                alt: `${project.name} main image`,
+              },
+            ],
+          }
+        : {}),
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `Projects | ${project.name}`,
+      description: project.lengthyDescription,
+      ...(mainImage ? { images: [mainImage] } : {}),
+    },
+
+    alternates: {
+      canonical: `https://zilfaan.space/projects/${project.slug}`,
+    },
+  };
+}
+
 export default function ProjectDetail({
   params,
 }: {
@@ -91,6 +145,30 @@ export default function ProjectDetail({
   return (
     <div className="min-h-[91vh] flex flex-col justify-center pt-20 bg-gradient-to-br from-background via-background to-accent/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Breadcrumb structured data for search engines */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://zilfaan.space/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: project.name,
+                  item: "https://zilfaan.space/projects/" + project.slug,
+                },
+              ],
+            }),
+          }}
+        />
         {/* Header */}
         <header className="text-center mb-5">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-mono font-bold special-text mb-6">

@@ -30,11 +30,15 @@ export const metadata = {
   },
   authors: [{ name: "Zilfaan Zaki Sulfikhan" }],
   creator: "Zilfaan Zaki Sulfikhan",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.png",
+  },
   openGraph: {
     title: "Zilfaan Zaki Sulfikhan | Portfolio",
     description:
       "Developer Portfolio of Zilfaan Zaki Sulfikhan, showcasing projects, skills, and experience.",
-    url: "https://zilfaan-portfolio.vercel.app",
+    url: "https://zilfaan.space",
     siteName: "Zilfaan Portfolio",
     type: "website",
   },

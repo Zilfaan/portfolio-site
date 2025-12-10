@@ -1,5 +1,3 @@
-"use client";
-
 import { educationData } from "@/lib/educationData";
 import { use } from "react";
 
@@ -38,6 +36,28 @@ const getGradeColor = (grade: string) => {
   return "text-red-500";
 };
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const education = educationData.find((e) => e.slug === params.slug);
+
+  if (!education) {
+    return { title: "Education Not Found | Zilfaan" };
+  }
+
+  return {
+    title: `Education | ${education.place}`,
+    description: education.description,
+    openGraph: {
+      title: `Education | ${education.place}`,
+      description: education.description,
+      url: `https://zilfaan.space/education/${education.slug}`,
+    },
+  };
+}
+
 export default function EducationDetail({ params }: Props) {
   const { slug } = use(params);
   const education = educationData.find((e) => e.slug === slug);
@@ -52,6 +72,30 @@ export default function EducationDetail({ params }: Props) {
 
   return (
     <div className="px-4 min-h-[90vh] py-20 flex flex-col justify-center max-w-4xl mx-auto space-y-8 ">
+      {/* Breadcrumb structured data for search engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://zilfaan.space/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: education.place,
+                item: "https://zilfaan.space/education/" + education.slug,
+              },
+            ],
+          }),
+        }}
+      />
       <h1 className="text-3xl md:text-4xl font-mono font-bold mb-8 special-text">
         {education.place}
       </h1>

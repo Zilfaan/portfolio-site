@@ -92,7 +92,7 @@ export const projects: Project[] = [
     lengthyDescription:
       "This portfolio website serves as both a personal showcase and a technical demonstration of modern web development practices, highlighting projects, skills, and education details in an elegant and performant interface. Smooth animations, responsive design, dynamic routing, and structured content make browsing intuitive and engaging.",
     images: ["/projects/portfolio/portfolio.png"],
-    link: "https://zilfaan-portfolio.vercel.app",
+    link: "https://zilfaan.space",
     github: "https://github.com/Zilfaan/portfolio-site",
     techstack: ["nextjs", "nodejs", "tailwindcss"],
   },

@@ -1,78 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage and anchors -->
+  <!-- Homepage -->
   <url>
-    <loc>https://zilfaan-portfolio.vercel.app/</loc>
+    <loc>https://zilfaan.space/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://zilfaan-portfolio.vercel.app/#about</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://zilfaan-portfolio.vercel.app/#projects</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://zilfaan-portfolio.vercel.app/#techstack</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://zilfaan-portfolio.vercel.app/#contact</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <!-- Education pages -->
   <url>
-    <loc>https://zilfaan-portfolio.vercel.app/education/school</loc>
+    <loc>https://zilfaan.space/education/school</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zilfaan-portfolio.vercel.app/education/foundation</loc>
+    <loc>https://zilfaan.space/education/foundation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zilfaan-portfolio.vercel.app/education/degree</loc>
+    <loc>https://zilfaan.space/education/degree</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Project pages -->
   <url>
-    <loc>https://zilfaan-portfolio.vercel.app/projects/lena</loc>
+    <loc>https://zilfaan.space/projects/lena</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zilfaan-portfolio.vercel.app/projects/lights-wager</loc>
+    <loc>https://zilfaan.space/projects/lights-wager</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zilfaan-portfolio.vercel.app/projects/spider-client</loc>
+    <loc>https://zilfaan.space/projects/spider-client</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zilfaan-portfolio.vercel.app/projects/oceon</loc>
+    <loc>https://zilfaan.space/projects/oceon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zilfaan-portfolio.vercel.app/projects/spicetify-youtube-importer</loc>
+    <loc>https://zilfaan.space/projects/spicetify-youtube-importer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zilfaan-portfolio.vercel.app/projects/portfolio-site</loc>
+    <loc>https://zilfaan.space/projects/portfolio-site</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
