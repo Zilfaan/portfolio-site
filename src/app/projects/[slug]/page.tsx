@@ -5,6 +5,60 @@ import { projects } from "@/lib/projects";
 import TechBlock from "@/components/TechBlock";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const project = projects.find((p) => p.slug === params.slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found | Zilfaan",
+      description: "This project does not exist.",
+      openGraph: {
+        title: "Project Not Found | Zilfaan",
+        description: "This project does not exist.",
+        url: `https://zilfaan.space/projects/${params.slug}`,
+      },
+    };
+  }
+
+  const mainImage = project.images[0];
+
+  return {
+    title: `Projects | ${project.name}`,
+    description: project.lengthyDescription,
+
+    openGraph: {
+      title: `Projects | ${project.name}`,
+      description: project.lengthyDescription,
+      url: `https://zilfaan.space/projects/${project.slug}`,
+      ...(mainImage
+        ? {
+            images: [
+              {
+                url: mainImage,
+                alt: `${project.name} main image`,
+              },
+            ],
+          }
+        : {}),
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `Projects | ${project.name}`,
+      description: project.lengthyDescription,
+      ...(mainImage ? { images: [mainImage] } : {}),
+    },
+
+    alternates: {
+      canonical: `https://zilfaan.space/projects/${project.slug}`,
+    },
+  };
+}
+
 export default function ProjectDetail({
   params,
 }: {

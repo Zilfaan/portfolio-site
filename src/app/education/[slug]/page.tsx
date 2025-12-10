@@ -1,5 +1,3 @@
-"use client";
-
 import { educationData } from "@/lib/educationData";
 import { use } from "react";
 
@@ -37,6 +35,28 @@ const getGradeColor = (grade: string) => {
 
   return "text-red-500";
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const education = educationData.find((e) => e.slug === params.slug);
+
+  if (!education) {
+    return { title: "Education Not Found | Zilfaan" };
+  }
+
+  return {
+    title: `Education | ${education.place}`,
+    description: education.description,
+    openGraph: {
+      title: `Education | ${education.place}`,
+      description: education.description,
+      url: `https://zilfaan.space/education/${education.slug}`,
+    },
+  };
+}
 
 export default function EducationDetail({ params }: Props) {
   const { slug } = use(params);
