@@ -38,21 +38,54 @@ export default function Hero() {
         applications.
       </p>
 
-      {/* Move to projects Button */}
-      <a
-        href="#projects"
-        className="relative z-10 inline-block px-8 py-3 font-mono rounded-lg shadow-lg 
+      <div className="flex gap-5">
+        {/* Move to projects Button */}
+        <a
+          href="#projects"
+          className="relative z-10 inline-block px-8 py-3 font-mono rounded-lg shadow-lg 
              bg-[var(--accent-cyan)]
              transition-all duration-300 ease-out
              hover:bg-[var(--accent-magenta)] hover:scale-105
              active:scale-95"
-        style={{
-          color: "var(--background)",
-          textDecoration: "none",
-        }}
-      >
-        Explore Projects
-      </a>
+          style={{
+            color: "var(--background)",
+            textDecoration: "none",
+          }}
+        >
+          Explore Projects
+        </a>
+        {/* Download CV Button */}
+        <a
+          href="/Zilfaan-Sulfikhan.pdf"
+          download
+          className="relative z-10 inline-flex items-center gap-2 px-7 py-3 font-mono rounded-lg border shadow-lg
+             border-[color:var(--accent-cyan)]
+             text-[color:var(--accent-cyan)]
+             bg-[color:color-mix(in srgb, var(--accent-cyan) 10%, transparent)]
+             transition-all duration-300 ease-out
+             hover:border-[color:var(--accent-magenta)] hover:text-[color:var(--accent-magenta)] hover:translate-y-[-1px]
+             active:translate-y-0"
+          style={{
+            textDecoration: "none",
+          }}
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <path d="M7 10l5 5 5-5" />
+            <path d="M12 15V3" />
+          </svg>
+          <span>Download CV</span>
+        </a>
+      </div>
     </section>
   );
 }
