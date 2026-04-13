@@ -1,0 +1,243 @@
+[
+  {
+    "name": "C++",
+    "type": "Core Languages",
+    "icon": "fa:FaCuttlefish",
+    "colorClass": "text-blue-600 font-bold"
+  },
+  {
+    "name": "C#",
+    "type": "Core Languages",
+    "icon": "fa:FaHashtag",
+    "colorClass": "text-purple-500 font-bold"
+  },
+  {
+    "name": "TypeScript",
+    "type": "Core Languages",
+    "icon": "si:SiTypescript",
+    "colorClass": "text-sky-500"
+  },
+  {
+    "name": "Python",
+    "type": "Core Languages",
+    "icon": "fa:FaPython",
+    "colorClass": "text-blue-400"
+  },
+  {
+    "name": "Java",
+    "type": "Core Languages",
+    "icon": "fa:FaJava",
+    "colorClass": "text-red-500"
+  },
+  {
+    "name": "Dart",
+    "type": "Core Languages",
+    "icon": "si:SiDart",
+    "colorClass": "text-sky-400"
+  },
+  {
+    "name": "Kotlin",
+    "type": "Core Languages",
+    "icon": "si:SiKotlin",
+    "colorClass": "text-purple-400"
+  },
+
+  {
+    "name": "Unreal Engine",
+    "type": "Game Development",
+    "icon": "si:SiUnrealengine",
+    "colorClass": "text-[var(--foreground)]"
+  },
+  {
+    "name": "Unity 6",
+    "type": "Game Development",
+    "icon": "fa:FaUnity",
+    "colorClass": "text-[var(--foreground)]"
+  },
+  {
+    "name": "Blender 3D",
+    "type": "Game Development",
+    "icon": "si:SiBlender",
+    "colorClass": "text-orange-500"
+  },
+
+  {
+    "name": "React",
+    "type": "Web Development",
+    "icon": "fa:FaReact",
+    "colorClass": "text-blue-500"
+  },
+  {
+    "name": "Next.js",
+    "type": "Web Development",
+    "icon": "si:SiNextdotjs",
+    "colorClass": "text-[var(--foreground)]"
+  },
+  {
+    "name": "Vite",
+    "type": "Web Development",
+    "icon": "si:SiVite",
+    "colorClass": "text-purple-500"
+  },
+  {
+    "name": "Tailwind CSS",
+    "type": "Web Development",
+    "icon": "si:SiTailwindcss",
+    "colorClass": "text-cyan-400"
+  },
+  {
+    "name": "HTML5",
+    "type": "Web Development",
+    "icon": "fa:FaHtml5",
+    "colorClass": "text-orange-500"
+  },
+  {
+    "name": "CSS",
+    "type": "Web Development",
+    "icon": "fa:FaCss3Alt",
+    "colorClass": "text-blue-500"
+  },
+
+  {
+    "name": "React Native (Expo)",
+    "type": "Mobile & Desktop",
+    "icon": "fa:FaReact",
+    "colorClass": "text-blue-500"
+  },
+  {
+    "name": "Electron",
+    "type": "Mobile & Desktop",
+    "icon": "si:SiElectron",
+    "colorClass": "text-blue-400"
+  },
+  {
+    "name": "Flutter",
+    "type": "Mobile & Desktop",
+    "icon": "si:SiFlutter",
+    "colorClass": "text-sky-400"
+  },
+  {
+    "name": "Native Android (Java)",
+    "type": "Mobile & Desktop",
+    "icon": "fa:FaAndroid",
+    "colorClass": "text-green-500"
+  },
+  {
+    "name": "Native Android (Kotlin)",
+    "type": "Mobile & Desktop",
+    "icon": "si:SiKotlin",
+    "colorClass": "text-purple-400"
+  },
+
+  {
+    "name": "NodeJS",
+    "type": "Backend",
+    "icon": "si:SiNodedotjs",
+    "colorClass": "text-green-600"
+  },
+  {
+    "name": "ExpressJS",
+    "type": "Backend",
+    "icon": "si:SiExpress",
+    "colorClass": "text-[var(--foreground)]"
+  },
+  {
+    "name": "Socket.io",
+    "type": "Backend",
+    "icon": "si:SiSocketdotio",
+    "colorClass": "text-black"
+  },
+  {
+    "name": "FastAPI",
+    "type": "Backend",
+    "icon": "si:SiFastapi",
+    "colorClass": "text-green-500"
+  },
+  {
+    "name": "Swagger",
+    "type": "Backend",
+    "icon": "si:SiSwagger",
+    "colorClass": "text-green-600"
+  },
+  {
+    "name": "Firebase",
+    "type": "Backend",
+    "icon": "si:SiFirebase",
+    "colorClass": "text-yellow-500"
+  },
+
+  {
+    "name": "MySQL",
+    "type": "Database",
+    "icon": "si:SiMysql",
+    "colorClass": "text-orange-500"
+  },
+  {
+    "name": "MongoDB",
+    "type": "Database",
+    "icon": "si:SiMongodb",
+    "colorClass": "text-green-600"
+  },
+
+  {
+    "name": "Github Actions",
+    "type": "DevOps & Cloud",
+    "icon": "si:SiGithubactions",
+    "colorClass": "text-purple-400"
+  },
+  {
+    "name": "Docker",
+    "type": "DevOps & Cloud",
+    "icon": "fa:FaDocker",
+    "colorClass": "text-blue-500"
+  },
+  {
+    "name": "Google Cloud Platform",
+    "type": "DevOps & Cloud",
+    "icon": "si:SiGooglecloud",
+    "colorClass": "text-blue-400"
+  },
+
+  {
+    "name": "TensorFlow",
+    "type": "Machine Learning & AI",
+    "icon": "si:SiTensorflow",
+    "colorClass": "text-orange-400"
+  },
+  {
+    "name": "PyTorch",
+    "type": "Machine Learning & AI",
+    "icon": "si:SiPytorch",
+    "colorClass": "text-red-500"
+  },
+  {
+    "name": "Keras",
+    "type": "Machine Learning & AI",
+    "icon": "si:SiKeras",
+    "colorClass": "text-red-400"
+  },
+  {
+    "name": "Scikit-learn",
+    "type": "Machine Learning & AI",
+    "icon": "si:SiScikitlearn",
+    "colorClass": "text-yellow-500"
+  },
+  {
+    "name": "Google Vertex AI",
+    "type": "Machine Learning & AI",
+    "icon": "si:SiGooglecloud",
+    "colorClass": "text-blue-400"
+  },
+  {
+    "name": "Agno",
+    "type": "Machine Learning & AI",
+    "icon": "fa:FaBrain",
+    "colorClass": "text-pink-400"
+  },
+  {
+    "name": "LanceDB",
+    "type": "Machine Learning & AI",
+    "icon": "fa:FaDatabase",
+    "colorClass": "text-green-400"
+  }
+]

@@ -1,58 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TechBlock from "./TechBlock";
 
-// List techstack and categorize
-const techs = [
-  // Languages
-  { name: "C#", type: "language" },
-  { name: "C++", type: "language" },
-  { name: "Java", type: "language" },
-  { name: "JavaScript", type: "language" },
-  { name: "Python", type: "language" },
-  { name: "TypeScript", type: "language" },
 
-  // Frontend
-  { name: "CSS", type: "frontend" },
-  { name: "Electron", type: "frontend" },
-  { name: "Expo", type: "frontend" },
-  { name: "HTML", type: "frontend" },
-  { name: "Next.Js", type: "frontend" },
-  { name: "React", type: "frontend" },
-  { name: "React Native", type: "frontend" },
-  { name: "TailwindCSS", type: "frontend" },
-  { name: "Vite", type: "frontend" },
-
-  // Backend
-  { name: "Express", type: "backend" },
-  { name: "Firebase", type: "backend" },
-  { name: "Node.Js", type: "backend" },
-
-  // Database
-  { name: "MongoDB", type: "database" },
-  { name: "MySQL", type: "database" },
-  { name: "SQLite", type: "database" },
-
-  // Developer Operations
-  { name: "Docker", type: "Developer Operations" },
-  { name: "Git", type: "Developer Operations" },
-  { name: "Github Actions", type: "Developer Operations" },
-
-  // Game dev
-  { name: "Blender", type: "Game Development" },
-  { name: "MCP", type: "Game Development" },
-  { name: "OpenGL", type: "Game Development" },
-  { name: "Unity", type: "Game Development" },
-  { name: "Unreal Engine", type: "Game Development" },
-].sort((a, b) => a.name.localeCompare(b.name));
-
-// Generate categories from tech stack
-const filters = ["all", ...new Set(techs.map((t) => t.type))];
+type Tech = {
+  icon: string | undefined;
+  colorClass: string | undefined;
+  name: string;
+  type: string;
+};
 
 export default function TechStackSection() {
-  // Filtering
+  const [techs, setTechs] = useState<Tech[]>([]);
+  const [filters, setFilters] = useState<string[]>(["all"]);
   const [activeFilter, setActiveFilter] = useState("all");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchTechs() {
+      try {
+        const res = await fetch("/techstack.json");
+        const data: Tech[] = await res.json();
+        data.sort((a, b) => a.name.localeCompare(b.name));
+        setTechs(data);
+        setFilters(["all", ...Array.from(new Set(data.map((t) => t.type)))]);
+      } catch (e) {
+        setTechs([]);
+        setFilters(["all"]);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchTechs();
+  }, []);
 
   const filteredTechs =
     activeFilter === "all"
@@ -98,18 +79,24 @@ export default function TechStackSection() {
 
       {/* Tech blocks */}
       <div className="flex justify-center w-full">
-        <div
-          className={`inline-grid grid-cols-2 gap-4 ${getGridCols(
-            filteredTechs.length
-          )}`}
-        >
-          {filteredTechs.map((tech) => (
-            <TechBlock
-              key={tech.name}
-              tech={tech.name.replace(/\s+/g, "-").replace(/\./g, "")}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <div className="text-lg font-mono text-[var(--foreground)]/60">Loading...</div>
+        ) : (
+          <div
+            className={`inline-grid grid-cols-2 gap-4 ${getGridCols(
+              filteredTechs.length
+            )}`}
+          >
+            {filteredTechs.map((tech) => (
+              <TechBlock
+                key={tech.name}
+                tech={tech.name}
+                icon={tech.icon}
+                colorClass={tech.colorClass}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
